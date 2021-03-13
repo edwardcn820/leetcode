@@ -7,6 +7,9 @@ public class ReverseIntegerTest {
         Assertions.assertEquals(321, ReverseInteger.reverseInteger(123));
         Assertions.assertEquals(112, ReverseInteger.reverseInteger(211));
         Assertions.assertEquals(-321, ReverseInteger.reverseInteger(-123));
-        Assertions.assertEquals(-1, ReverseInteger.reverseInteger(1999999999));
+        Assertions.assertEquals(0, ReverseInteger.reverseInteger(1999999999));
+        Assertions.assertEquals(0, ReverseInteger.reverseInteger(1534236469));
+        Assertions.assertEquals(0, ReverseInteger.reverseInteger(-2147483648));
+        Assertions.assertEquals(-2143847412, ReverseInteger.reverseInteger(-2147483412));
     }
 }

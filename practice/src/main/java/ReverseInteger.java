@@ -21,8 +21,10 @@ public class ReverseInteger {
             // Loop 3: Input = 0 => In the coming while loop check, it will jump out of the loop automatically
 
             // Cannot check result * 10 > Integer.MAX_VALUE because result * 10 becomes long which is 64 bits
-            if (result > Integer.MAX_VALUE / 10) {
-                result = -1;
+            // input != 0 is used for the case -2147483412 as -214748341 is larger than -2147483648 (min) / 10, so it will go into the last round
+            // but last round, input is down to 0 but result is less than min value / 10 at that time. The checking is only for the second last round.
+            if (input != 0 && (result > Integer.MAX_VALUE / 10 || result < Integer.MIN_VALUE / 10)) {
+                result = 0;
                 break;
             }
         }
